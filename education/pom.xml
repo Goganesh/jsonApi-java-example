@@ -14,7 +14,7 @@
 	<name>education</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<elide.version>5.0.0-pr31</elide.version>
+		<elide.version>5.0.0-pr32</elide.version>
 		<spring.version>2.4.2</spring.version>
 	</properties>
 	<dependencies>
