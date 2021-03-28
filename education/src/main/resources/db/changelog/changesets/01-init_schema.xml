@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="Basiladze-GT" id="addEduContainer">
+        <createTable schemaName="education" tableName="edu_containers">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="cont_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(255)">
+            </column>
+            <column name="container_type" type="VARCHAR(255)">
+            </column>
+        </createTable>
+
+        <createTable schemaName="education" tableName="lessons">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"
+                             foreignKeyName="fk_education_id"
+                             references="education.edu_containers(id)"/>
+            </column>
+            <column name="lesson_attr" type="VARCHAR(255)">
+            </column>
+        </createTable>
+
+        <createTable schemaName="education" tableName="materials">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"
+                             foreignKeyName="fk_education_id"
+                             references="education.edu_containers(id)"/>
+            </column>
+            <column name="material_attr" type="VARCHAR(255)">
+            </column>
+        </createTable>
+
+        <createTable schemaName="education" tableName="education_relations">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="container_id1" type="uuid">
+                <constraints foreignKeyName="fk_education_id1"
+                             references="education.edu_containers(id)"/>
+            </column>
+            <column name="container_id2" type="uuid">
+                <constraints foreignKeyName="fk_education_id2"
+                             references="education.edu_containers(id)"/>
+            </column>
+            <column name="relation_type" type="VARCHAR(255)">
+            </column>
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

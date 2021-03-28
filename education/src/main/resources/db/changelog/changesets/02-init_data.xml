@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="Basiladze-GT" id="load_data_lesson">
+        <loadData schemaName="education" tableName="edu_containers" encoding="UTF-8"
+                  file="classpath:db/changelog/data/containers.csv"
+                  quotchar="'" separator=";" >
+            <column header="id" type="uuid"/>
+            <column header="cont_name" type="STRING"/>
+            <column header="description" type="STRING"/>
+            <column header="container_type" type="STRING"/>
+        </loadData>
+
+        <loadData schemaName="education" tableName="lessons" encoding="UTF-8"
+                  file="classpath:db/changelog/data/lessons.csv"
+                  quotchar="'" separator=";" >
+            <column header="id" type="uuid"/>
+            <column header="lesson_attr" type="STRING"/>
+        </loadData>
+
+        <loadData schemaName="education" tableName="materials" encoding="UTF-8"
+                  file="classpath:db/changelog/data/materials.csv"
+                  quotchar="'" separator=";" >
+            <column header="id" type="uuid"/>
+            <column header="material_attr" type="STRING"/>
+        </loadData>
+
+        <loadData schemaName="education" tableName="education_relations" encoding="UTF-8"
+                  file="classpath:db/changelog/data/relations.csv"
+                  quotchar="'" separator=";" >
+            <column header="id" type="uuid"/>
+            <column header="container_id1" type="uuid"/>
+            <column header="container_id2" type="uuid"/>
+            <column header="relation_type" type="STRING"/>
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

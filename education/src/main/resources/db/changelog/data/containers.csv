@@ -1,0 +1,13 @@
+id;cont_name;description;container_type
+de38e65b-77df-45a1-8ec4-8457ba212c04;lesson 1;Algebra;LESSON
+e95b1688-67bb-41cc-a2b6-f8d25bee4820;lesson2;Geometry;LESSON
+b1ecce30-04b7-4992-8743-f564915c6a02;lesson3;Design;LESSON
+8cae0bca-038f-4784-ad5c-a8c84f04709b;lesson4;Programming;LESSON
+b1bf2a52-a84e-4311-aa0f-a46b841b2b34;lesson5;Math;LESSON
+b970d6f7-57ad-46d8-9e6c-aa956d5b6ae2;lesson6;English;LESSON
+64f0f01b-0a9d-49ec-a180-72b5fbbfd4e0;material1;Book;MATERIAL
+d05a3928-ab8e-48f8-8a27-4c050ac1336a;material2;File;MATERIAL
+d3d4e457-5bc5-43c4-8f8e-e5e9795df8b8;material3;Image;MATERIAL
+c51a971b-e2d0-4bc6-8559-cc15ebe07c5e;material4;HTML;MATERIAL
+a9076da4-1bba-4923-bf00-b852fd7c9315;material5;Reference;MATERIAL
+d5f21094-8753-492c-8f11-f4ad7dce2e43;material6;Video;MATERIAL

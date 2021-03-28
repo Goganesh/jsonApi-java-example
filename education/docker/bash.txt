@@ -1,0 +1,14 @@
+docker pull postgres
+docker run --rm --name=myContainer --env="POSTGRES_PASSWORD=postgres1" --publish 5432:5432 -d postgres
+
+docker exec -it myContainer bash
+su postgres
+psql
+CREATE DATABASE education;
+\connect education;
+create schema education;
+
+docker ps -q
+docker stop myContainer
+docker rm myContainer
+docker image prune -a -f
